@@ -248,4 +248,8 @@ class TitucController extends Controller
     {
         //
     }
+    public function showPost(){
+        $tintuc=tintuc::all();
+        return view('tintuc.list',['list'=>$tintuc]);
+    }
 }

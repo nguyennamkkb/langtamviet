@@ -3,7 +3,25 @@
 <!DOCTYPE html>
 <html lang="vn">
 
-@include('layouttrang.head')
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Làng Tăm Việt &amp; Sản phẩm Bán thủ công địa phương</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{asset('main/img/core-img/logo1.png')}}">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{{asset('main/style.css')}}">
+    <link rel="stylesheet" href="{{asset('main/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('main/css/demo.css')}}">
+
+</head>
 
 <body>
     <!-- Preloader -->
@@ -25,8 +43,8 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="nguyenluongthuc@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: nguyenluongthuc@gmail.com</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+84 984 77 88 78"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 984 77 88 78</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: nguyenluongthuc@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 984 77 88 78</span></a>
                             </div>
 
                             <!-- Top Header Content -->
@@ -64,14 +82,15 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="{{url('/')}}">Trang chủ</a></li>
-                                    <li><a href="{{url('/post')}}">Tin tức</a></li>
+                                    <li><a href="{{url('/about')}}">Chúng tôi</a></li>
+                                    <li><a href="{{url('/tintuc')}}">Tin tức</a></li>
                                     <li><a href="{{url('/hoatdong')}}">Hoạt động</a></li>
                                     <li><a href="{{url('/sanpham')}}">Sản phẩm</a></li>
                                     <li><a href="{{url('/lienhe')}}">Liên hệ</a></li>
                                 </ul>
 
                                 <!-- Search Icon -->
-                               
+                                
 
                             </div>
                             <!-- Navbar End -->
@@ -111,7 +130,7 @@
                                 <h2>{{$key->tieudechinh}}</h2> 
                                 
                                 <div class="welcome-btn-group">
-                                    <a href="{{url('lienhe')}}" class="btn alazea-btn active">CONTACT US</a>
+                                    <a href="" class="btn alazea-btn active">CONTACT US</a>
                                 </div>
                             </div>
                         </div>
@@ -235,6 +254,7 @@
                     <div class="cd-timeline__content js-cd-content">
                         <h2>Những năm sau đó</h2>
                         <p>Thị trường tăm cần tăm làm hương, những người có tay nghề giỏi đã trẻ ra loại tăm này và đã được thị trường chấp nhận </p>
+                        <a href="#0" class="cd-timeline__read-more">Read more</a>
                         <span class="cd-timeline__date">Những năm 1990</span>
                     </div> <!-- cd-timeline__content -->
                 </div> <!-- cd-timeline__block -->
@@ -247,6 +267,7 @@
                     <div class="cd-timeline__content js-cd-content">
                         <h2>Phát triển rộng hơn</h2>
                         <p>phát triển sang các làng lân cận và tất cả sản phẩm làm ra đều tốt lên.</p>
+                        <a href="#0" class="cd-timeline__read-more">Read more</a>
                         <span class="cd-timeline__date">JKhoảng Năm</span>
                     </div> <!-- cd-timeline__content -->
                 </div> <!-- cd-timeline__block -->
@@ -259,6 +280,7 @@
                     <div class="cd-timeline__content js-cd-content">
                         <h2>Máy móc hỗ trợ</h2>
                         <p>Thời điểm nhu càu lớn nhất là khoảng <b>năm 2005</b> cơ sở chúng tôi xuất ra thị trường 400 Tấn/Tháng</p>
+                        <a href="#0" class="cd-timeline__read-more">Read more</a>
                         <span class="cd-timeline__date">Feb 14</span>
                     </div> <!-- cd-timeline__content -->
                 </div> <!-- cd-timeline__block -->
@@ -271,6 +293,7 @@
                     <div class="cd-timeline__content js-cd-content">
                         <h2>Title of section 5</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+                        <a href="#0" class="cd-timeline__read-more">Read more</a>
                         <span class="cd-timeline__date">Feb 18</span>
                     </div> <!-- cd-timeline__content -->
                 </div> <!-- cd-timeline__block -->
@@ -577,7 +600,7 @@
                             <a href="single-post.html"><img src="{{asset('uploads/tintuc/'.$tin->tieude.'/'.$tin->hinhanh1)}}" alt=""></a>
                         </div>
                         <div class="post-content">
-                            <a href="{{url('post/singlepost/'.$tin->id)}}" class="post-title">
+                            <a href="single-post.html" class="post-title">
                                 <h5>{{$tin->tieude}}</h5>
                             </a>
                             <div class="post-meta">
@@ -605,7 +628,122 @@
     <!-- ##### Subscribe Area End ##### -->
 
     <!-- ##### Contact Area Start ##### -->
-    @include('layouttrang.foot');
+    <section class="contact-area">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Liên lạc</h2>
+                        <p>Thôn Đạo Tú, xã Quảng Phú Cầu, huyện Ứng Hòa, TP.Hà Nội.</p>
+                    </div>
+                    <!-- Contact Form Area -->
+                    <div class="contact-form-area mb-100">
+                        <form action="#" method="post">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-name" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="contact-email" placeholder="Your Email">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-subject" placeholder="Subject">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn alazea-btn mt-15">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <!-- Google Maps -->
+                    <div class="map-area mb-100">
+                        <img src="{{asset('main/img/bg-img/undervd.jpg')}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Contact Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image:  url({{asset('main/img/bg-img/3.jpg')}});">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-12 col-lg-6">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#"><img src="{{asset('main/img/core-img/logo.png')}}" alt=""></a>
+                            </div>
+                            <p>Tinh hoa văn hóa, làng nghề tăm việt</p>
+                            <div class="social-info">
+                                <a href="https://www.facebook.com/L%C3%A0ng-t%C4%83m-vi%E1%BB%87t-557884618054134/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+
+                    <!-- Single Footer Widget -->
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-12 col-lg-5">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>LIÊN HỆ</h5>
+                            </div>
+
+                            <div class="contact-information">
+                                <p><span>Address:</span> Thông Đạo Tú, Xã Quảng Phú Cầu,Huyện Ứng Hòa, Tp.Hà Nội</p>
+                                <p><span>Phone:</span> +84 984 77 88 78</p>
+                                <p><span>Email:</span> nguyenluongthuc@gmail.com</p>
+                                <p><span>Open hours:</span> Mon - Sun: 8 AM to 9 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Area -->
+
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{asset('main/js/jquery/jquery-2.2.4.min.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{asset('main/js/bootstrap/popper.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{asset('main/js/bootstrap/bootstrap.min.js')}}"></script>
+    <!-- All Plugins js -->
+    <script src="{{asset('main/js/plugins/plugins.js')}}"></script>
+    <!-- Active js -->
+    <script src="{{asset('main/js/active.js')}}"></script>
+    <script src="{{asset('main/js/main.js')}}"></script>
 </body>
 
 </html>

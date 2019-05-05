@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -29,9 +29,9 @@ class HomeController extends Controller
     public function index()
     {
         $slide=slide::all();
-        $anhsx=anhsx::all();
+        $anhsx=anhsx::orderBy('id','DESC')->limit(16)->get();
         $theloai=theloai::all();
-        $tintuc=tintuc::all();
+        $tintuc=tintuc::orderBy('id','DESC')->limit(3)->get();
         
 
         return view('welcome',[
@@ -41,5 +41,17 @@ class HomeController extends Controller
             'tintuc'=>$tintuc,
 
     ]);
+    }
+    public function hoatdong(){
+        $anhsx=anhsx::all();
+        $theloai=theloai::all();
+        return view('trangchu.hoatdong',[
+            'anhsx'=>$anhsx,
+            'theloai'=>$theloai,
+
+    ]);
+    }
+    public function lienhe(){
+        return view('trangchu.lienhe');
     }
 }

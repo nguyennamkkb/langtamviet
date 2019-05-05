@@ -19,7 +19,7 @@ class adminlog
             $user=Auth::User();
             if ($user->id==1) {
                
-                return $next($request);
+                 return redirect('ltvadmin/dashboard');
             }else{
                 return redirect('login');
             }

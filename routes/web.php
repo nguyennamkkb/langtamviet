@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::group(['prefix'=>'/'],function(){
+	Route::get('', 'HomeController@index');
+	Route::get('hoatdong', 'HomeController@hoatdong');
+	Route::get('lienhe', 'HomeController@lienhe');
+	Route::get('post','TintucController@showPost');
+	Route::get('sanpham','TintucController@sanpham');
+	Route::get('post/singlepost/{id}','TintucController@singlePost');
+
+});
 
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'ltvadmin','middleware'=>'adminlogin'],function(){
 	Route::get('dashboard','Admin\AdminController@index');
 	Route::resource('slide','Admin\SlideController');
@@ -25,7 +31,8 @@ Route::group(['prefix'=>'ltvadmin','middleware'=>'adminlogin'],function(){
 	Route::resource('anhsx','Admin\AnhsxController');
 	Route::resource('tintuc','Admin\TitucController');
 	Route::resource('loaitin','Admin\loaitinController');
-
+	
 
 
 });
+Auth::routes();
